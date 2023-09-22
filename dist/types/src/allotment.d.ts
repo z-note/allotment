@@ -68,6 +68,10 @@ export type AllotmentProps = {
     onReset?: () => void;
     /** Callback on visibility change */
     onVisibleChange?: (index: number, visible: boolean) => void;
+    /** Callback on drag start */
+    onDragStart?: (sizes: number[]) => void;
+    /** Callback on drag end */
+    onDragEnd?: (sizes: number[]) => void;
 } & CommonProps;
 /**
  * Set sash size. This is set in both css and js and this function keeps the two in sync.
@@ -96,6 +100,10 @@ declare const _default: React.ForwardRefExoticComponent<{
     onReset?: (() => void) | undefined;
     /** Callback on visibility change */
     onVisibleChange?: ((index: number, visible: boolean) => void) | undefined;
+    /** Callback on drag start */
+    onDragStart?: ((sizes: number[]) => void) | undefined;
+    /** Callback on drag end */
+    onDragEnd?: ((sizes: number[]) => void) | undefined;
 } & CommonProps & React.RefAttributes<AllotmentHandle>> & {
     Pane: React.ForwardRefExoticComponent<{
         children: React.ReactNode;

@@ -1,9 +1,16 @@
 import styles from "./content.module.css";
 
-export const Content = () => (
-  <div className={styles.container}>
+export const Content = ({
+  style,
+  svgStyle,
+}: {
+  style?: React.CSSProperties;
+  svgStyle?: React.CSSProperties;
+}) => (
+  <div className={styles.container} style={style}>
     <div className={styles.card}>
       <svg
+        style={svgStyle}
         className={styles.svg}
         preserveAspectRatio="none"
         stroke="currentColor"

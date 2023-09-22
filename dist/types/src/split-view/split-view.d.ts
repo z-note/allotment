@@ -141,6 +141,8 @@ export interface View {
  */
 export declare class SplitView extends EventEmitter implements Disposable {
     onDidChange: ((sizes: number[]) => void) | undefined;
+    onDidDragStart: ((sizes: number[]) => void) | undefined;
+    onDidDragEnd: ((sizes: number[]) => void) | undefined;
     /**  This {@link SplitView}'s orientation. */
     readonly orientation: Orientation;
     private sashContainer;
@@ -165,7 +167,7 @@ export declare class SplitView extends EventEmitter implements Disposable {
      */
     set endSnappingEnabled(endSnappingEnabled: boolean);
     /** Create a new {@link SplitView} instance. */
-    constructor(container: HTMLElement, options?: SplitViewOptions, onDidChange?: (sizes: number[]) => void);
+    constructor(container: HTMLElement, options?: SplitViewOptions, onDidChange?: (sizes: number[]) => void, onDidDragStart?: (sizes: number[]) => void, onDidDragEnd?: (sizes: number[]) => void);
     /**
      * Add a {@link View view} to this {@link SplitView}.
      *

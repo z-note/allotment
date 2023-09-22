@@ -1,3 +1,10 @@
+> Note: This repository is a fork of [`allotment`](https://github.com/johnwalley/allotment).
+>
+> - Track Commits on Aug 24, 2023
+> - 560a1065d874e2fe9127bd6ff786064f74274928
+
+---
+
 [![CI status](https://github.com/johnwalley/allotment/actions/workflows/build.yml/badge.svg)](https://github.com/johnwalley/allotment/actions/workflows/build.yml)
 [![GitHub license](https://img.shields.io/npm/l/allotment?style=plastic)](https://github.com/johnwalley/allotment/blob/main/LICENSE)
 [![NPM](https://img.shields.io/npm/v/allotment?style=plastic&color=green)](https://npmjs.com/package/allotment/)
@@ -115,6 +122,14 @@ Direction to split. If true then the panes will be stacked vertically, otherwise
 ### onChange
 
 Callback that is fired when the pane sizes change (usually on drag). Recommended to add a debounce function to rate limit the callback. Passed an array of numbers.
+
+### onDragStart
+
+Callback that is fired when the user clicks on the sash
+
+### onDragEnd
+
+Callback that is fired when the user stops clicking the sash
 
 ### onReset
 

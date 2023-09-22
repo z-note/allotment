@@ -14,6 +14,8 @@ export declare const Vertical: Story<{
     onChange?: ((sizes: number[]) => void) | undefined;
     onReset?: (() => void) | undefined;
     onVisibleChange?: ((index: number, visible: boolean) => void) | undefined;
+    onDragStart?: ((sizes: number[]) => void) | undefined;
+    onDragEnd?: ((sizes: number[]) => void) | undefined;
 } & import("../src/allotment").CommonProps & {
     numViews: number;
 }>;
@@ -27,6 +29,8 @@ export declare const Horizontal: Story<{
     onChange?: ((sizes: number[]) => void) | undefined;
     onReset?: (() => void) | undefined;
     onVisibleChange?: ((index: number, visible: boolean) => void) | undefined;
+    onDragStart?: ((sizes: number[]) => void) | undefined;
+    onDragEnd?: ((sizes: number[]) => void) | undefined;
 } & import("../src/allotment").CommonProps & {
     numViews: number;
 }>;

@@ -114,6 +114,10 @@ export type AllotmentProps = {
   onReset?: () => void;
   /** Callback on visibility change */
   onVisibleChange?: (index: number, visible: boolean) => void;
+  /** Callback on drag start */
+  onDragStart?: (sizes: number[]) => void;
+  /** Callback on drag end */
+  onDragEnd?: (sizes: number[]) => void;
 } & CommonProps;
 
 /**
@@ -135,6 +139,8 @@ const Allotment = forwardRef<AllotmentHandle, AllotmentProps>(
       onChange,
       onReset,
       onVisibleChange,
+      onDragStart,
+      onDragEnd,
     },
     ref
   ) => {
@@ -246,7 +252,9 @@ const Allotment = forwardRef<AllotmentHandle, AllotmentProps>(
       splitViewRef.current = new SplitView(
         containerRef.current,
         options,
-        onChange
+        onChange,
+        onDragStart,
+        onDragEnd
       );
 
       splitViewRef.current.on("sashDragStart", () => {
@@ -447,6 +455,18 @@ const Allotment = forwardRef<AllotmentHandle, AllotmentProps>(
       }
     }, [onChange]);
 
+    useEffect(() => {
+      if (splitViewRef.current) {
+        splitViewRef.current.onDidDragStart = onDragStart;
+      }
+    }, [onDragStart]);
+
+    useEffect(() => {
+      if (splitViewRef.current) {
+        splitViewRef.current.onDidDragEnd = onDragEnd;
+      }
+    }, [onDragEnd]);
+
     useResizeObserver({
       ref: containerRef,
       onResize: ({ width, height }) => {
@@ -506,6 +526,12 @@ const Allotment = forwardRef<AllotmentHandle, AllotmentProps>(
               return React.cloneElement(child as React.ReactElement, {
                 key: key,
                 ref: (el: HTMLElement | null) => {
+                  const ref = (child as any).ref;
+
+                  if (ref) {
+                    ref.current = el;
+                  }
+
                   if (el) {
                     splitViewViewRef.current.set(key, el);
                   } else {

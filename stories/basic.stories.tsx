@@ -355,7 +355,7 @@ export const Visible: Story<AllotmentProps> = (args) => {
 Visible.args = {};
 
 export const VisibleWithAnimation: Story<AllotmentProps> = (args) => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   return (
     <div>
@@ -378,7 +378,10 @@ export const VisibleWithAnimation: Story<AllotmentProps> = (args) => {
           }}
         >
           <Allotment.Pane visible={visible} className={styles.leftPane}>
-            <Content />
+            <Content
+              style={{ background: "red" }}
+              svgStyle={{ background: "red" }}
+            />
           </Allotment.Pane>
           <Allotment.Pane className={styles.rightPane}>
             <Content />
