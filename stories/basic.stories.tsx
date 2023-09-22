@@ -373,9 +373,12 @@ export const VisibleWithAnimation: Story<AllotmentProps> = (args) => {
           {...args}
           className={styles.splitViewContainer}
           snap
+          defaultSizes={[1, 1]}
           onVisibleChange={(_index, value) => {
             setVisible(value);
           }}
+          onChange={(sizes) => console.log("onChange sizes ==>", sizes)}
+          onDragEnd={(sizes) => console.log("onDragEnd sizes ==>", sizes)}
         >
           <Allotment.Pane visible={visible} className={styles.leftPane}>
             <Content

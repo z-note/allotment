@@ -1,18 +1,18 @@
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 import e, { useRef as t, useState as i, useEffect as n, useCallback as r, useMemo as s, useLayoutEffect as o, forwardRef as a, useImperativeHandle as u } from "react";
-var h,
-  c = {};
+var c,
+  h = {};
 /*!
   Copyright (c) 2018 Jed Watson.
   Licensed under the MIT License (MIT), see
   http://jedwatson.github.io/classnames
 */
-h = {
+c = {
   get exports() {
-    return c;
+    return h;
   },
   set exports(e) {
-    c = e;
+    h = e;
   }
 }, function () {
   var e = {}.hasOwnProperty;
@@ -33,9 +33,9 @@ h = {
     }
     return i.join(" ");
   }
-  h.exports ? (t.default = t, h.exports = t) : window.classNames = t;
+  c.exports ? (t.default = t, c.exports = t) : window.classNames = t;
 }();
-var l = c,
+var l = h,
   f = /^\s+|\s+$/g,
   m = /^[-+]0x[0-9a-f]+$/i,
   d = /^0b[01]+$/i,
@@ -77,8 +77,8 @@ var z = function z(e, t, i) {
     o = "[object Boolean]",
     a = "[object Date]",
     u = "[object Error]",
-    h = "[object Function]",
-    c = "[object Map]",
+    c = "[object Function]",
+    h = "[object Map]",
     l = "[object Number]",
     f = "[object Object]",
     m = "[object Promise]",
@@ -92,7 +92,7 @@ var z = function z(e, t, i) {
     S = /^\[object .+?Constructor\]$/,
     _ = /^(?:0|[1-9]\d*)$/,
     I = {};
-  I["[object Float32Array]"] = I["[object Float64Array]"] = I["[object Int8Array]"] = I["[object Int16Array]"] = I["[object Int32Array]"] = I["[object Uint8Array]"] = I["[object Uint8ClampedArray]"] = I["[object Uint16Array]"] = I["[object Uint32Array]"] = !0, I[r] = I[s] = I[b] = I[o] = I[z] = I[a] = I[u] = I[h] = I[c] = I[l] = I[f] = I[d] = I[p] = I[v] = I[g] = !1;
+  I["[object Float32Array]"] = I["[object Float64Array]"] = I["[object Int8Array]"] = I["[object Int16Array]"] = I["[object Int32Array]"] = I["[object Uint8Array]"] = I["[object Uint8ClampedArray]"] = I["[object Uint16Array]"] = I["[object Uint32Array]"] = !0, I[r] = I[s] = I[b] = I[o] = I[z] = I[a] = I[u] = I[c] = I[h] = I[l] = I[f] = I[d] = I[p] = I[v] = I[g] = !1;
   var x = "object" == typeof w && w && w.Object === Object && w,
     E = "object" == typeof self && self && self.Object === Object && self,
     V = x || E || Function("return this")(),
@@ -154,8 +154,8 @@ var z = function z(e, t, i) {
     oe = Oe(V, "Promise"),
     ae = Oe(V, "Set"),
     ue = Oe(V, "WeakMap"),
-    he = Oe(Object, "create"),
-    ce = Te(re),
+    ce = Oe(Object, "create"),
+    he = Te(re),
     le = Te(se),
     fe = Te(oe),
     me = Te(ae),
@@ -210,8 +210,8 @@ var z = function z(e, t, i) {
         return n;
       }(e.length, String) : [],
       u = a.length;
-    for (var h in e) {
-      !t && !W.call(e, h) || o && ("length" == h || r && ("offset" == h || "parent" == h) || s && ("buffer" == h || "byteLength" == h || "byteOffset" == h) || Ae(h, u)) || a.push(h);
+    for (var c in e) {
+      !t && !W.call(e, c) || o && ("length" == c || r && ("offset" == c || "parent" == c) || s && ("buffer" == c || "byteLength" == c || "byteOffset" == c) || Ae(c, u)) || a.push(c);
     }
     return a;
   }
@@ -239,8 +239,8 @@ var z = function z(e, t, i) {
   function xe(e) {
     return Re(e) && Ie(e) == r;
   }
-  function Ee(e, t, i, n, h) {
-    return e === t || (null == e || null == t || !Re(e) && !Re(t) ? e != e && t != t : function (e, t, i, n, h, m) {
+  function Ee(e, t, i, n, c) {
+    return e === t || (null == e || null == t || !Re(e) && !Re(t) ? e != e && t != t : function (e, t, i, n, c, m) {
       var g = ke(e),
         w = ke(t),
         S = g ? s : Pe(e),
@@ -252,7 +252,7 @@ var z = function z(e, t, i) {
         if (!$e(t)) return !1;
         g = !0, I = !1;
       }
-      if (E && !I) return m || (m = new we()), g || We(e) ? Ne(e, t, i, n, h, m) : function (e, t, i, n, r, s, h) {
+      if (E && !I) return m || (m = new we()), g || We(e) ? Ne(e, t, i, n, c, m) : function (e, t, i, n, r, s, c) {
         switch (i) {
           case z:
             if (e.byteLength != t.byteLength || e.byteOffset != t.byteOffset) return !1;
@@ -268,28 +268,28 @@ var z = function z(e, t, i) {
           case d:
           case v:
             return e == t + "";
-          case c:
+          case h:
             var f = A;
           case p:
             var m = 1 & n;
             if (f || (f = T), e.size != t.size && !m) return !1;
-            var g = h.get(e);
+            var g = c.get(e);
             if (g) return g == t;
-            n |= 2, h.set(e, t);
-            var w = Ne(f(e), f(t), n, r, s, h);
-            return h.delete(e), w;
+            n |= 2, c.set(e, t);
+            var w = Ne(f(e), f(t), n, r, s, c);
+            return c.delete(e), w;
           case y:
             if (ve) return ve.call(e) == ve.call(t);
         }
         return !1;
-      }(e, t, S, i, n, h, m);
+      }(e, t, S, i, n, c, m);
       if (!(1 & i)) {
         var V = I && W.call(e, "__wrapped__"),
           j = x && W.call(t, "__wrapped__");
         if (V || j) {
           var N = V ? e.value() : e,
             L = j ? t.value() : t;
-          return m || (m = new we()), h(N, L, i, n, m);
+          return m || (m = new we()), c(N, L, i, n, m);
         }
       }
       if (!E) return !1;
@@ -297,11 +297,11 @@ var z = function z(e, t, i) {
         var o = 1 & i,
           a = Le(e),
           u = a.length,
-          h = Le(t).length;
-        if (u != h && !o) return !1;
-        var c = u;
-        for (; c--;) {
-          var l = a[c];
+          c = Le(t).length;
+        if (u != c && !o) return !1;
+        var h = u;
+        for (; h--;) {
+          var l = a[h];
           if (!(o ? l in t : W.call(t, l))) return !1;
         }
         var f = s.get(e);
@@ -309,8 +309,8 @@ var z = function z(e, t, i) {
         var m = !0;
         s.set(e, t), s.set(t, e);
         var d = o;
-        for (; ++c < u;) {
-          var p = e[l = a[c]],
+        for (; ++h < u;) {
+          var p = e[l = a[h]],
             v = t[l];
           if (n) var y = o ? n(v, p, l, t, e, s) : n(p, v, l, e, t, s);
           if (!(void 0 === y ? p === v || r(p, v, i, n, s) : y)) {
@@ -325,8 +325,8 @@ var z = function z(e, t, i) {
           g == b || !("constructor" in e) || !("constructor" in t) || "function" == typeof g && g instanceof g && "function" == typeof b && b instanceof b || (m = !1);
         }
         return s.delete(e), s.delete(t), m;
-      }(e, t, i, n, h, m);
-    }(e, t, i, n, Ee, h));
+      }(e, t, i, n, c, m);
+    }(e, t, i, n, Ee, c));
   }
   function Ve(e) {
     return !(!Be(e) || function (e) {
@@ -349,15 +349,15 @@ var z = function z(e, t, i) {
       a = e.length,
       u = t.length;
     if (a != u && !(o && u > a)) return !1;
-    var h = s.get(e);
-    if (h && s.get(t)) return h == t;
-    var c = -1,
+    var c = s.get(e);
+    if (c && s.get(t)) return c == t;
+    var h = -1,
       l = !0,
       f = 2 & i ? new ze() : void 0;
-    for (s.set(e, t), s.set(t, e); ++c < a;) {
-      var m = e[c],
-        d = t[c];
-      if (n) var p = o ? n(d, m, c, t, e, s) : n(m, d, c, e, t, s);
+    for (s.set(e, t), s.set(t, e); ++h < a;) {
+      var m = e[h],
+        d = t[h];
+      if (n) var p = o ? n(d, m, h, t, e, s) : n(m, d, h, e, t, s);
       if (void 0 !== p) {
         if (p) continue;
         l = !1;
@@ -402,23 +402,23 @@ var z = function z(e, t, i) {
     return Ve(i) ? i : void 0;
   }
   ye.prototype.clear = function () {
-    this.__data__ = he ? he(null) : {}, this.size = 0;
+    this.__data__ = ce ? ce(null) : {}, this.size = 0;
   }, ye.prototype.delete = function (e) {
     var t = this.has(e) && delete this.__data__[e];
     return this.size -= t ? 1 : 0, t;
   }, ye.prototype.get = function (e) {
     var t = this.__data__;
-    if (he) {
+    if (ce) {
       var n = t[e];
       return n === i ? void 0 : n;
     }
     return W.call(t, e) ? t[e] : void 0;
   }, ye.prototype.has = function (e) {
     var t = this.__data__;
-    return he ? void 0 !== t[e] : W.call(t, e);
+    return ce ? void 0 !== t[e] : W.call(t, e);
   }, ye.prototype.set = function (e, t) {
     var n = this.__data__;
-    return this.size += this.has(e) ? 0 : 1, n[e] = he && void 0 === t ? i : t, this;
+    return this.size += this.has(e) ? 0 : 1, n[e] = ce && void 0 === t ? i : t, this;
   }, ge.prototype.clear = function () {
     this.__data__ = [], this.size = 0;
   }, ge.prototype.delete = function (e) {
@@ -506,15 +506,15 @@ var z = function z(e, t, i) {
   function Ce(e, t) {
     return e === t || e != e && t != t;
   }
-  (re && Pe(new re(new ArrayBuffer(1))) != z || se && Pe(new se()) != c || oe && Pe(oe.resolve()) != m || ae && Pe(new ae()) != p || ue && Pe(new ue()) != g) && (Pe = function Pe(e) {
+  (re && Pe(new re(new ArrayBuffer(1))) != z || se && Pe(new se()) != h || oe && Pe(oe.resolve()) != m || ae && Pe(new ae()) != p || ue && Pe(new ue()) != g) && (Pe = function Pe(e) {
     var t = Ie(e),
       i = t == f ? e.constructor : void 0,
       n = i ? Te(i) : "";
     if (n) switch (n) {
-      case ce:
+      case he:
         return z;
       case le:
-        return c;
+        return h;
       case fe:
         return m;
       case me:
@@ -536,7 +536,7 @@ var z = function z(e, t, i) {
   function He(e) {
     if (!Be(e)) return !1;
     var t = Ie(e);
-    return t == h || "[object GeneratorFunction]" == t || "[object AsyncFunction]" == t || "[object Proxy]" == t;
+    return t == c || "[object GeneratorFunction]" == t || "[object AsyncFunction]" == t || "[object Proxy]" == t;
   }
   function Ye(e) {
     return "number" == typeof e && e > -1 && e % 1 == 0 && e <= n;
@@ -580,13 +580,13 @@ function x(e) {
     a = t(void 0);
   a.current = o;
   var u = e.round || Math.round,
-    h = t(),
-    c = i({
+    c = t(),
+    h = i({
       width: void 0,
       height: void 0
     }),
-    l = c[0],
-    f = c[1],
+    l = h[0],
+    f = h[1],
     m = t(!1);
   n(function () {
     return m.current = !1, function () {
@@ -623,7 +623,7 @@ function x(e) {
         a.current = e, u();
       }, [u]);
     }(r(function (t) {
-      return h.current && h.current.box === e.box && h.current.round === u || (h.current = {
+      return c.current && c.current.box === e.box && c.current.round === u || (c.current = {
         box: e.box,
         round: u,
         instance: new ResizeObserver(function (t) {
@@ -632,19 +632,19 @@ function x(e) {
             r = I(i, n, "inlineSize"),
             s = I(i, n, "blockSize"),
             o = r ? u(r) : void 0,
-            h = s ? u(s) : void 0;
-          if (d.current.width !== o || d.current.height !== h) {
-            var c = {
+            c = s ? u(s) : void 0;
+          if (d.current.width !== o || d.current.height !== c) {
+            var h = {
               width: o,
-              height: h
+              height: c
             };
-            d.current.width = o, d.current.height = h, a.current ? a.current(c) : m.current || f(c);
+            d.current.width = o, d.current.height = c, a.current ? a.current(h) : m.current || f(h);
           }
         })
-      }), h.current.instance.observe(t, {
+      }), c.current.instance.observe(t, {
         box: e.box
       }), function () {
-        h.current && h.current.instance.unobserve(t);
+        c.current && c.current.instance.unobserve(t);
       };
     }, [e.box, u]), e.ref);
   return s(function () {
@@ -731,50 +731,50 @@ var H = {};
     var a = i ? i + e : e;
     if (!this._events[a]) return !1;
     var u,
-      h,
-      c = this._events[a],
+      c,
+      h = this._events[a],
       l = arguments.length;
-    if (c.fn) {
-      switch (c.once && this.removeListener(e, c.fn, void 0, !0), l) {
+    if (h.fn) {
+      switch (h.once && this.removeListener(e, h.fn, void 0, !0), l) {
         case 1:
-          return c.fn.call(c.context), !0;
+          return h.fn.call(h.context), !0;
         case 2:
-          return c.fn.call(c.context, t), !0;
+          return h.fn.call(h.context, t), !0;
         case 3:
-          return c.fn.call(c.context, t, n), !0;
+          return h.fn.call(h.context, t, n), !0;
         case 4:
-          return c.fn.call(c.context, t, n, r), !0;
+          return h.fn.call(h.context, t, n, r), !0;
         case 5:
-          return c.fn.call(c.context, t, n, r, s), !0;
+          return h.fn.call(h.context, t, n, r, s), !0;
         case 6:
-          return c.fn.call(c.context, t, n, r, s, o), !0;
+          return h.fn.call(h.context, t, n, r, s, o), !0;
       }
-      for (h = 1, u = new Array(l - 1); h < l; h++) {
-        u[h - 1] = arguments[h];
+      for (c = 1, u = new Array(l - 1); c < l; c++) {
+        u[c - 1] = arguments[c];
       }
-      c.fn.apply(c.context, u);
+      h.fn.apply(h.context, u);
     } else {
       var f,
-        m = c.length;
-      for (h = 0; h < m; h++) {
-        switch (c[h].once && this.removeListener(e, c[h].fn, void 0, !0), l) {
+        m = h.length;
+      for (c = 0; c < m; c++) {
+        switch (h[c].once && this.removeListener(e, h[c].fn, void 0, !0), l) {
           case 1:
-            c[h].fn.call(c[h].context);
+            h[c].fn.call(h[c].context);
             break;
           case 2:
-            c[h].fn.call(c[h].context, t);
+            h[c].fn.call(h[c].context, t);
             break;
           case 3:
-            c[h].fn.call(c[h].context, t, n);
+            h[c].fn.call(h[c].context, t, n);
             break;
           case 4:
-            c[h].fn.call(c[h].context, t, n, r);
+            h[c].fn.call(h[c].context, t, n, r);
             break;
           default:
             if (!u) for (f = 1, u = new Array(l - 1); f < l; f++) {
               u[f - 1] = arguments[f];
             }
-            c[h].fn.apply(c[h].context, u);
+            h[c].fn.apply(h[c].context, u);
         }
       }
     }
@@ -789,10 +789,10 @@ var H = {};
     if (!t) return o(this, s), this;
     var a = this._events[s];
     if (a.fn) a.fn !== t || r && !a.once || n && a.context !== n || o(this, s);else {
-      for (var u = 0, h = [], c = a.length; u < c; u++) {
-        (a[u].fn !== t || r && !a[u].once || n && a[u].context !== n) && h.push(a[u]);
+      for (var u = 0, c = [], h = a.length; u < h; u++) {
+        (a[u].fn !== t || r && !a[u].once || n && a[u].context !== n) && c.push(a[u]);
       }
-      h.length ? this._events[s] = 1 === h.length ? h[0] : h : o(this, s);
+      c.length ? this._events[s] = 1 === c.length ? c[0] : c : o(this, s);
     }
     return this;
   }, a.prototype.removeAllListeners = function (e) {
@@ -868,29 +868,29 @@ var se = function se(e, t, i) {
       o,
       a,
       u,
-      h = 0,
-      c = !1,
+      c = 0,
+      h = !1,
       l = !1,
       f = !0;
     if ("function" != typeof e) throw new TypeError("Expected a function");
     function m(t) {
       var i = n,
         s = r;
-      return n = r = void 0, h = t, o = e.apply(s, i);
+      return n = r = void 0, c = t, o = e.apply(s, i);
     }
     function d(e) {
-      return h = e, a = setTimeout(v, t), c ? m(e) : o;
+      return c = e, a = setTimeout(v, t), h ? m(e) : o;
     }
     function p(e) {
       var i = e - u;
-      return void 0 === u || i >= t || i < 0 || l && e - h >= s;
+      return void 0 === u || i >= t || i < 0 || l && e - c >= s;
     }
     function v() {
       var e = ie();
       if (p(e)) return y(e);
       a = setTimeout(v, function (e) {
         var i = t - (e - u);
-        return l ? te(i, s - (e - h)) : i;
+        return l ? te(i, s - (e - c)) : i;
       }(e));
     }
     function y(e) {
@@ -905,8 +905,8 @@ var se = function se(e, t, i) {
       }
       return void 0 === a && (a = setTimeout(v, t)), o;
     }
-    return t = re(t) || 0, ne(i) && (c = !!i.leading, s = (l = "maxWait" in i) ? ee(re(i.maxWait) || 0, t) : s, f = "trailing" in i ? !!i.trailing : f), g.cancel = function () {
-      void 0 !== a && clearTimeout(a), h = 0, n = u = r = a = void 0;
+    return t = re(t) || 0, ne(i) && (h = !!i.leading, s = (l = "maxWait" in i) ? ee(re(i.maxWait) || 0, t) : s, f = "trailing" in i ? !!i.trailing : f), g.cancel = function () {
+      void 0 !== a && clearTimeout(a), c = 0, n = u = r = a = void 0;
     }, g.flush = function () {
       return void 0 === a ? o : y(ie());
     }, g;
@@ -914,8 +914,8 @@ var se = function se(e, t, i) {
   oe = "sash-module_sash__K-9lB",
   ae = "sash-module_disabled__Hm-wx",
   ue = "sash-module_mac__Jf6OJ",
-  he = "sash-module_vertical__pB-rs",
-  ce = "sash-module_minimum__-UKxp",
+  ce = "sash-module_vertical__pB-rs",
+  he = "sash-module_minimum__-UKxp",
   le = "sash-module_maximum__TCWxD",
   fe = "sash-module_horizontal__kFbiw",
   me = "sash-module_hover__80W6I",
@@ -933,7 +933,7 @@ class be extends H {
     return this._state;
   }
   set state(e) {
-    this._state !== e && (this.el.classList.toggle(ae, e === ve.Disabled), this.el.classList.toggle("sash-disabled", e === ve.Disabled), this.el.classList.toggle(ce, e === ve.Minimum), this.el.classList.toggle("sash-minimum", e === ve.Minimum), this.el.classList.toggle(le, e === ve.Maximum), this.el.classList.toggle("sash-maximum", e === ve.Maximum), this._state = e, this.emit("enablementChange", e));
+    this._state !== e && (this.el.classList.toggle(ae, e === ve.Disabled), this.el.classList.toggle("sash-disabled", e === ve.Disabled), this.el.classList.toggle(he, e === ve.Minimum), this.el.classList.toggle("sash-minimum", e === ve.Minimum), this.el.classList.toggle(le, e === ve.Maximum), this.el.classList.toggle("sash-maximum", e === ve.Maximum), this._state = e, this.emit("enablementChange", e));
   }
   constructor(e, t, i) {
     var _i$orientation;
@@ -969,7 +969,7 @@ class be extends H {
       this.hoverDelayer.cancel(), this.el.classList.remove("sash-hover", me);
     }, this.el = document.createElement("div"), this.el.classList.add("sash", oe), this.el.dataset.testid = "sash", e.append(this.el), C && this.el.classList.add("sash-mac", ue), this.el.addEventListener("pointerdown", this.onPointerStart), this.el.addEventListener("dblclick", this.onPointerDoublePress), this.el.addEventListener("mouseenter", this.onMouseEnter), this.el.addEventListener("mouseleave", this.onMouseLeave), "number" == typeof i.size ? (this.size = i.size, i.orientation === pe.Vertical ? this.el.style.width = this.size + "px" : this.el.style.height = this.size + "px") : (this.size = ye, ge.on("onDidChangeGlobalSize", e => {
       this.size = e, this.layout();
-    })), this.layoutProvider = t, this.orientation = (_i$orientation = i.orientation) != null ? _i$orientation : pe.Vertical, this.orientation === pe.Horizontal ? (this.el.classList.add("sash-horizontal", fe), this.el.classList.remove("sash-vertical", he)) : (this.el.classList.remove("sash-horizontal", fe), this.el.classList.add("sash-vertical", he)), this.layout();
+    })), this.layoutProvider = t, this.orientation = (_i$orientation = i.orientation) != null ? _i$orientation : pe.Vertical, this.orientation === pe.Horizontal ? (this.el.classList.add("sash-horizontal", fe), this.el.classList.remove("sash-vertical", ce)) : (this.el.classList.remove("sash-horizontal", fe), this.el.classList.add("sash-vertical", ce)), this.layout();
   }
   layout() {
     if (this.orientation === pe.Vertical) {
@@ -1243,11 +1243,11 @@ class Ee extends H {
         o = Number.POSITIVE_INFINITY;
       var a = R(i, -1, -1),
         u = R(i + 1, this.viewItems.length),
-        h = a.reduce((e, i) => e + (this.viewItems[i].minimumSize - t[i]), 0),
-        c = a.reduce((e, i) => e + (this.viewItems[i].viewMaximumSize - t[i]), 0),
+        c = a.reduce((e, i) => e + (this.viewItems[i].minimumSize - t[i]), 0),
+        h = a.reduce((e, i) => e + (this.viewItems[i].viewMaximumSize - t[i]), 0),
         l = 0 === u.length ? Number.POSITIVE_INFINITY : u.reduce((e, i) => e + (t[i] - this.viewItems[i].minimumSize), 0),
         f = 0 === u.length ? Number.NEGATIVE_INFINITY : u.reduce((e, i) => e + (t[i] - this.viewItems[i].viewMaximumSize), 0);
-      s = Math.max(h, f), o = Math.min(l, c);
+      s = Math.max(c, f), o = Math.min(l, h);
       var m = this.findFirstSnapIndex(a),
         d = this.findFirstSnapIndex(u);
       if ("number" == typeof m) {
@@ -1315,22 +1315,22 @@ class Ee extends H {
       o = Number.POSITIVE_INFINITY;
     }
     if (e < 0 || e >= this.viewItems.length) return 0;
-    var h = R(e, -1, -1),
-      c = R(e + 1, this.viewItems.length);
+    var c = R(e, -1, -1),
+      h = R(e + 1, this.viewItems.length);
     if (r) for (var _e9 of r) {
-      Y(h, _e9), Y(c, _e9);
+      Y(c, _e9), Y(h, _e9);
     }
     if (n) for (var _e10 of n) {
-      B(h, _e10), B(c, _e10);
+      B(c, _e10), B(h, _e10);
     }
-    var l = h.map(e => this.viewItems[e]),
-      f = h.map(e => i[e]),
-      m = c.map(e => this.viewItems[e]),
-      d = c.map(e => i[e]),
-      p = h.reduce((e, t) => e + (this.viewItems[t].minimumSize - i[t]), 0),
-      v = h.reduce((e, t) => e + (this.viewItems[t].maximumSize - i[t]), 0),
-      y = 0 === c.length ? Number.POSITIVE_INFINITY : c.reduce((e, t) => e + (i[t] - this.viewItems[t].minimumSize), 0),
-      g = 0 === c.length ? Number.NEGATIVE_INFINITY : c.reduce((e, t) => e + (i[t] - this.viewItems[t].maximumSize), 0),
+    var l = c.map(e => this.viewItems[e]),
+      f = c.map(e => i[e]),
+      m = h.map(e => this.viewItems[e]),
+      d = h.map(e => i[e]),
+      p = c.reduce((e, t) => e + (this.viewItems[t].minimumSize - i[t]), 0),
+      v = c.reduce((e, t) => e + (this.viewItems[t].maximumSize - i[t]), 0),
+      y = 0 === h.length ? Number.POSITIVE_INFINITY : h.reduce((e, t) => e + (i[t] - this.viewItems[t].minimumSize), 0),
+      g = 0 === h.length ? Number.NEGATIVE_INFINITY : h.reduce((e, t) => e + (i[t] - this.viewItems[t].maximumSize), 0),
       b = Math.max(p, g, s),
       w = Math.min(y, v, o);
     var S = !1;
@@ -1403,9 +1403,9 @@ class Ee extends H {
           _s = R(_e16 + 1, this.viewItems.length),
           _a2 = this.findFirstSnapIndex(_i12),
           _u2 = this.findFirstSnapIndex(_s),
-          _h = "number" == typeof _a2 && !this.viewItems[_a2].visible,
-          _c = "number" == typeof _u2 && !this.viewItems[_u2].visible;
-        _h && r[_e16] && (o > 0 || this.startSnappingEnabled) ? _n6.state = ve.Minimum : _c && t[_e16] && (o < this.contentSize || this.endSnappingEnabled) ? _n6.state = ve.Maximum : _n6.state = ve.Disabled;
+          _c = "number" == typeof _a2 && !this.viewItems[_a2].visible,
+          _h = "number" == typeof _u2 && !this.viewItems[_u2].visible;
+        _c && r[_e16] && (o > 0 || this.startSnappingEnabled) ? _n6.state = ve.Minimum : _h && t[_e16] && (o < this.contentSize || this.endSnappingEnabled) ? _n6.state = ve.Maximum : _n6.state = ve.Disabled;
       } else _n6.state = _a && !_u ? ve.Minimum : !_a && _u ? ve.Maximum : ve.Enabled;
     }
   }
@@ -1496,8 +1496,8 @@ var Me = a((_ref4, I) => {
   var {
     children: o,
     className: a,
-    maxSize: h = 1 / 0,
-    minSize: c = 30,
+    maxSize: c = 1 / 0,
+    minSize: h = 30,
     proportionalLayout: f = !0,
     separator: m = !0,
     sizes: d,
@@ -1553,8 +1553,8 @@ var Me = a((_ref4, I) => {
           var i = M.current.get(N.current[t]),
             n = new Le(C.current, _extends({
               element: document.createElement("div"),
-              minimumSize: (_i$minSize = i == null ? void 0 : i.minSize) != null ? _i$minSize : c,
-              maximumSize: (_i$maxSize = i == null ? void 0 : i.maxSize) != null ? _i$maxSize : h,
+              minimumSize: (_i$minSize = i == null ? void 0 : i.minSize) != null ? _i$minSize : h,
+              maximumSize: (_i$maxSize = i == null ? void 0 : i.maxSize) != null ? _i$maxSize : c,
               priority: (_i$priority = i == null ? void 0 : i.priority) != null ? _i$priority : Se.Normal
             }, (i == null ? void 0 : i.preferredSize) && {
               preferredSize: i == null ? void 0 : i.preferredSize
@@ -1611,8 +1611,8 @@ var Me = a((_ref4, I) => {
         var i = M.current.get(_n8),
           r = new Le(C.current, _extends({
             element: document.createElement("div"),
-            minimumSize: (_i$minSize2 = i == null ? void 0 : i.minSize) != null ? _i$minSize2 : c,
-            maximumSize: (_i$maxSize2 = i == null ? void 0 : i.maxSize) != null ? _i$maxSize2 : h,
+            minimumSize: (_i$minSize2 = i == null ? void 0 : i.minSize) != null ? _i$minSize2 : h,
+            maximumSize: (_i$maxSize2 = i == null ? void 0 : i.maxSize) != null ? _i$maxSize2 : c,
             priority: (_i$priority2 = i == null ? void 0 : i.priority) != null ? _i$priority2 : Se.Normal
           }, (i == null ? void 0 : i.preferredSize) && {
             preferredSize: i == null ? void 0 : i.preferredSize
@@ -1673,7 +1673,7 @@ var Me = a((_ref4, I) => {
       }
       (_i14.length > 0 || _r4.length > 0) && (N.current = _e25);
     }
-  }, [B, H, h, c, v]), n(() => {
+  }, [B, H, c, h, v]), n(() => {
     P.current && (P.current.onDidChange = g);
   }, [g]), n(() => {
     P.current && (P.current.onDidDragStart = w);
@@ -1689,7 +1689,16 @@ var Me = a((_ref4, I) => {
       } = _ref5;
       e && t && ((_P$current12 = P.current) != null && _P$current12.layout(y ? t : e), C.current.setSize(y ? t : e), Y(!0));
     }
-  }), n(() => {
+  }), F(() => {
+    if (!H) {
+      var _P$current13;
+      var {
+        height: _e28,
+        width: _t24
+      } = V.current.getBoundingClientRect();
+      (_P$current13 = P.current) != null && _P$current13.layout(y ? _e28 : _t24), C.current.setSize(y ? _e28 : _t24), Y(!0);
+    }
+  }, [H, y]), n(() => {
     T && Pe(20);
   }, []), e.createElement("div", {
     ref: V,

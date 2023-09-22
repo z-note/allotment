@@ -11,7 +11,7 @@ function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArra
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0) { ; } } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e29) { throw _e29; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e30) { didErr = true; err = _e30; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e30) { throw _e30; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e31) { didErr = true; err = _e31; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
@@ -156,8 +156,8 @@ var f = function f(e, t, i) {
   }
   var T,
     F,
-    k,
-    R = Array.prototype,
+    R,
+    k = Array.prototype,
     H = Function.prototype,
     $ = Object.prototype,
     Y = V["__core-js_shared__"],
@@ -170,12 +170,12 @@ var f = function f(e, t, i) {
     K = V.Symbol,
     Z = V.Uint8Array,
     q = $.propertyIsEnumerable,
-    Q = R.splice,
+    Q = k.splice,
     ee = K ? K.toStringTag : void 0,
     te = Object.getOwnPropertySymbols,
     ie = J ? J.isBuffer : void 0,
-    re = (F = Object.keys, k = Object, function (e) {
-      return F(k(e));
+    re = (F = Object.keys, R = Object, function (e) {
+      return F(R(e));
     }),
     se = Pe(V, "DataView"),
     ne = Pe(V, "Map"),
@@ -226,9 +226,9 @@ var f = function f(e, t, i) {
     this.size = t.size;
   }
   function Se(e, t) {
-    var i = ke(e),
+    var i = Re(e),
       r = !i && Fe(e),
-      s = !i && !r && Re(e),
+      s = !i && !r && ke(e),
       n = !i && !r && !s && We(e),
       o = i || r || s || n,
       a = o ? function (e, t) {
@@ -269,15 +269,15 @@ var f = function f(e, t, i) {
   }
   function Ee(e, t, i, r, c) {
     return e === t || (null == e || null == t || !Be(e) && !Be(t) ? e != e && t != t : function (e, t, i, r, c, m) {
-      var d = ke(e),
-        g = ke(t),
+      var d = Re(e),
+        g = Re(t),
         S = d ? n : Me(e),
         _ = g ? n : Me(t),
         x = (S = S == s ? f : S) == f,
         I = (_ = _ == s ? f : _) == f,
         E = S == _;
-      if (E && Re(e)) {
-        if (!Re(t)) return !1;
+      if (E && ke(e)) {
+        if (!ke(t)) return !1;
         d = !0, x = !1;
       }
       if (E && !x) return m || (m = new we()), d || We(e) ? je(e, t, i, r, c, m) : function (e, t, i, r, s, n, c) {
@@ -409,7 +409,7 @@ var f = function f(e, t, i) {
   function Ne(e) {
     return function (e, t, i) {
       var r = t(e);
-      return ke(e) ? r : function (e, t) {
+      return Re(e) ? r : function (e, t) {
         for (var i = -1, r = t.length, s = e.length; ++i < r;) {
           e[s + i] = t[i];
         }
@@ -557,8 +557,8 @@ var f = function f(e, t, i) {
     }()) ? Ie : function (e) {
       return Be(e) && W.call(e, "callee") && !q.call(e, "callee");
     },
-    ke = Array.isArray;
-  var Re = ie || function () {
+    Re = Array.isArray;
+  var ke = ie || function () {
     return !1;
   };
   function He(e) {
@@ -862,8 +862,8 @@ function C(e, t) {
 }
 var T = /^\s+|\s+$/g,
   F = /^[-+]0x[0-9a-f]+$/i,
-  k = /^0b[01]+$/i,
-  R = /^0o[0-7]+$/i,
+  R = /^0b[01]+$/i,
+  k = /^0o[0-7]+$/i,
   H = parseInt,
   $ = "object" == _typeof(m) && m && m.Object === Object && m,
   Y = "object" == (typeof self === "undefined" ? "undefined" : _typeof(self)) && self && self.Object === Object && self,
@@ -891,8 +891,8 @@ function K(e) {
   }
   if ("string" != typeof e) return 0 === e ? e : +e;
   e = e.replace(T, "");
-  var i = k.test(e);
-  return i || R.test(e) ? H(e.slice(2), i ? 2 : 8) : F.test(e) ? NaN : +e;
+  var i = R.test(e);
+  return i || k.test(e) ? H(e.slice(2), i ? 2 : 8) : F.test(e) ? NaN : +e;
 }
 var Z = function Z(e, t, i) {
     var r,
@@ -2101,7 +2101,15 @@ var Ie = t.forwardRef(function (_ref4, w) {
         t = _ref5.height;
       e && t && ((_j$current12 = j.current) !== null && _j$current12 !== void 0 && _j$current12.layout(l ? t : e), O.current.setSize(l ? t : e), C(!0));
     }
-  }), t.useEffect(function () {
+  }), N(function () {
+    if (!A) {
+      var _j$current13;
+      var _I$current$getBoundin = I.current.getBoundingClientRect(),
+        _e29 = _I$current$getBoundin.height,
+        _t21 = _I$current$getBoundin.width;
+      (_j$current13 = j.current) !== null && _j$current13 !== void 0 && _j$current13.layout(l ? _e29 : _t21), O.current.setSize(l ? _e29 : _t21), C(!0);
+    }
+  }, [A, l]), t.useEffect(function () {
     L && Ee(20);
   }, []), t.createElement("div", {
     ref: I,
