@@ -473,19 +473,14 @@ const Allotment = forwardRef<AllotmentHandle, AllotmentProps>(
         if (width && height) {
           splitViewRef.current?.layout(vertical ? height : width);
           layoutService.current.setSize(vertical ? height : width);
-          setDimensionsInitialized(true);
         }
       },
     });
 
     useIsomorphicLayoutEffect(() => {
-      if (!dimensionsInitialized) {
-        const { height, width } = containerRef.current.getBoundingClientRect();
-        splitViewRef.current?.layout(vertical ? height : width);
-        layoutService.current.setSize(vertical ? height : width);
-        setDimensionsInitialized(true);
-      }
-    }, [dimensionsInitialized, vertical]);
+      // update state to update views in #(line 313).
+      setDimensionsInitialized(true);
+    }, []);
 
     useEffect(() => {
       if (isIOS) {
